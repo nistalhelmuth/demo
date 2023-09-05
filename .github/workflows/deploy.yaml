@@ -21,4 +21,4 @@ jobs:
           path:       rewardsweb/rewardsweb-iac-scripts-project
 
       - name: Configure Java and Gradle
-        uses: ./rewardsweb/rewardsweb-iac-scripts-project/.github/actions/configure-java-gradle
+        uses: ${{ vars.PATH }}/.github/actions/configure-java-gradle
