@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: rewardsweb/rewardsweb-iac-scripts-project
-          token:      ${{ secrets.personal-token }}
+          token:      ${{ secrets.PERSONAL_TOKEN }}
           path:       rewardsweb/rewardsweb-iac-scripts-project
 
       - name: Configure Java and Gradle
