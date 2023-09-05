@@ -8,5 +8,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: ${{"actions"}}/checkout@v3
+      - name: Checking out caller repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: Checking out reusable workflow repository
+        uses: actions/checkout@v3
+        with:
+          repository: rewardsweb/rewardsweb-iac-scripts-project
+          token:      ${{ secrets.personal-token }}
+          path:       rewardsweb/rewardsweb-iac-scripts-project
+
+      - name: Configure Java and Gradle
+        uses: ./rewardsweb/rewardsweb-iac-scripts-project/.github/actions/configure-java-gradle
