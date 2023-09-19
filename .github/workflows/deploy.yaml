@@ -10,7 +10,9 @@ jobs:
     steps:
       - name: Checking out caller repository
         uses: actions/checkout@v3
-
+        with:
+          fetch-depth: 0
+      
       - name: Get penultimate tag
         id: penultimate-tag
         run: echo "tag-name=$(git describe --abbrev=0 --match="docker-image-v*" --tags HEAD~)" >> $GITHUB_OUTPUT
