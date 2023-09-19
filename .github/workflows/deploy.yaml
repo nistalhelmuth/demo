@@ -10,15 +10,6 @@ jobs:
     steps:
       - name: Checking out caller repository
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      
-      - name: Checking out reusable workflow repository
-        uses: actions/checkout@v3
-        with:
-          repository: rewardsweb/rewardsweb-iac-scripts-project
-          token:      ${{ secrets.PERSONAL_TOKEN }}
-          path:       rewardsweb/rewardsweb-iac-scripts-project
 
       - name: Get penultimate tag
         id: penultimate-tag
