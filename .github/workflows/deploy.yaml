@@ -22,4 +22,7 @@ jobs:
 
       - name: Get penultimate tag
         id: penultimate-tag
-        run: git describe --abbrev=0 --match="docker-image-v*" --tags HEAD~
+        run: echo "tag-name=$(git describe --abbrev=0 --match="docker-image-v*" --tags HEAD~)" >> $GITHUB_OUTPUT
+      
+      - name: echo penultimate 
+        run: echo ${{ steps.penultimate-tag.outputs.tag-name }}
