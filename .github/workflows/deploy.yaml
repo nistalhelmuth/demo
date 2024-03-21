@@ -19,3 +19,6 @@ jobs:
       
       - name: echo penultimate 
         run: echo ${{ steps.penultimate-tag.outputs.tag-name }}
+
+      - name: echo penultimate 
+        run: ls -l
